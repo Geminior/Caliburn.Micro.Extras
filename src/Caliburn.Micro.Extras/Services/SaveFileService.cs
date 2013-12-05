@@ -50,6 +50,22 @@
         }
 
 #if NET
+
+        /// <summary>
+        /// Gets a <see cref="FileInfo" /> object for the selected file.
+        /// </summary>
+        public FileInfo File
+        {
+            get
+            {
+#if SILVERLIGHT
+                return openFileDialog.File;
+#else
+                return new FileInfo(saveFileDialog.FileName);
+#endif
+            }
+        }
+
         /// <summary>
         /// Gets or sets a value indicating whether this instance prompts the user for permission to create a file if the user specifies a file that does not exist.
         /// </summary>

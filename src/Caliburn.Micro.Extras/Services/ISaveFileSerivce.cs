@@ -20,6 +20,11 @@
         /// </summary>
         string SafeFileName { get; }
 
+        /// <summary>
+        /// Gets a <see cref="FileInfo" /> object for the selected file.
+        /// </summary>
+        FileInfo File { get; }
+
 #if NET
         /// <summary>
         /// Gets or sets a value indicating whether this instance prompts the user for permission to create a file if the user specifies a file that does not exist.
